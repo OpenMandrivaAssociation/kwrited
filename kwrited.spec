@@ -1,11 +1,13 @@
+%define major %(echo %{version} |cut -d. -f1-3)
+
 Summary:	Application for monitoring messages sent with write or wall
 Name:		kwrited
-Version:	5.0.95
+Version:	5.1.0.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{version}/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{major}/%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DBusAddons)
@@ -25,7 +27,7 @@ Application for monitoring messages sent with write or wall
 #----------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -qn %{name}-%{major}
 
 %build
 %cmake
