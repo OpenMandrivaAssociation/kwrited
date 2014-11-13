@@ -1,13 +1,14 @@
 %define major %(echo %{version} |cut -d. -f1-3)
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 
 Summary:	Application for monitoring messages sent with write or wall
 Name:		kwrited
-Version:	5.1.0.1
+Version:	5.1.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DBusAddons)
