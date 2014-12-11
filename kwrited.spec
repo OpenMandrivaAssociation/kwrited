@@ -16,6 +16,7 @@ BuildRequires:	cmake
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5KDE4Support)
 BuildRequires:	cmake(KF5Pty)
+BuildRequires:	ninja
 
 %description
 Application for monitoring messages sent with write or wall
@@ -29,11 +30,12 @@ Application for monitoring messages sent with write or wall
 
 %prep
 %setup -qn %{name}-%{major}
+%cmake -G Ninja \
+	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %build
-%cmake
-%make
+ninja -C build
 
 %install
-%makeinstall_std -C build
+DESTDIR="%{buildroot}" ninja install -C build
 
