@@ -3,7 +3,7 @@
 
 Summary:	Application for monitoring messages sent with write or wall
 Name:		kwrited
-Version:	5.2.1
+Version:	5.2.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -16,10 +16,13 @@ BuildRequires:	cmake
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5KDE4Support)
 BuildRequires:	cmake(KF5Pty)
+BuildRequires:	pkgconfig(Qt5Core)
+BuildRequires:	pkgconfig(Qt5Gui)
+BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	ninja
 
 %description
-Application for monitoring messages sent with write or wall
+Application for monitoring messages sent with write or wall.
 
 %files
 %{_sysconfdir}/xdg/autostart/kwrited-autostart.desktop
