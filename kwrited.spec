@@ -8,37 +8,35 @@ Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-Source0:	ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0:	fhttp://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DBusAddons)
-BuildRequires:	cmake
 BuildRequires:	cmake(KF5)
 BuildRequires:	cmake(KF5KDE4Support)
 BuildRequires:	cmake(KF5Pty)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Widgets)
-BuildRequires:	ninja
 
 %description
 Application for monitoring messages sent with write or wall.
 
 %files
-%{_sysconfdir}/xdg/autostart/kwrited-autostart.desktop
-%{_bindir}/*
+
+%{_libdir}/qt5/plugins/kded_kwrited.so
+%{_datadir}/kservices5/kded/kwrited.desktop
 %{_datadir}/knotifications5/kwrited.notifyrc
 
 #----------------------------------------------------------------------------
 
 %prep
 %setup -qn %{name}-%{major}
-%cmake -G Ninja \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+%cmake_kde5
 
 %build
-ninja -C build
+%ninja -C build
 
 %install
-DESTDIR="%{buildroot}" ninja install -C build
+%ninja_install -C build
 
