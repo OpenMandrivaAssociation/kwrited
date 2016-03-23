@@ -9,7 +9,6 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
 Source0:	fhttp://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
-
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5)
@@ -23,9 +22,7 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 Application for monitoring messages sent with write or wall.
 
 %files
-
-%{_libdir}/qt5/plugins/kded_kwrited.so
-%{_datadir}/kservices5/kded/kwrited.desktop
+%{_libdir}/qt5/plugins/kf5/kded/kwrited.so
 %{_datadir}/knotifications5/kwrited.notifyrc
 
 #----------------------------------------------------------------------------
@@ -39,4 +36,3 @@ Application for monitoring messages sent with write or wall.
 
 %install
 %ninja_install -C build
-
