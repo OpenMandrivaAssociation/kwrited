@@ -3,12 +3,12 @@
 
 Summary:	Application for monitoring messages sent with write or wall
 Name:		kwrited
-Version:	5.6.0
+Version:	5.6.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://kde.org/
-Source0:	fhttp://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/plasma/%{major}/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5DBusAddons)
 BuildRequires:	cmake(KF5)
