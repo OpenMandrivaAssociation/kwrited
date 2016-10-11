@@ -22,6 +22,8 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 Application for monitoring messages sent with write or wall.
 
 %files
+%{_bindir}/kwrited
+%{_sysconfdir}/autostart/kwrited-autostart.desktop
 %{_libdir}/qt5/plugins/kf5/kded/kwrited.so
 %{_datadir}/knotifications5/kwrited.notifyrc
 
