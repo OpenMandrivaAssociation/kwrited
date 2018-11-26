@@ -1,4 +1,5 @@
 removed_sources:
   kwrited-5.12.3.tar.xz: b2208588caba6772dcd52be78c877334537d867f
-sources:
   kwrited-5.12.6.tar.xz: 4f7bde08df4171d169e168fde76917a5f884ca1e
+sources:
+  kwrited-5.12.7.tar.xz: 2aa33ca086612f50df7e4d1a0383d5ddbd2db2cc
