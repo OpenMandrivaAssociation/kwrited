@@ -3,7 +3,7 @@
 
 Summary:	Application for monitoring messages sent with write or wall
 Name:		kwrited
-Version:	5.26.0
+Version:	5.26.1
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
